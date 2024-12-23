@@ -21,18 +21,14 @@ const { sortedChats, activeChat, switchChat, deleteChat, startNewChat, wipeDatab
   useChats()
 
 const onNewChat = () => {
-  checkSystemPromptPanel()
   return startNewChat('New chat')
 }
 
 const onSwitchChat = (chatId: number) => {
-  checkSystemPromptPanel()
   return switchChat(chatId)
 }
 
-const checkSystemPromptPanel = () => {
-  isSystemPromptOpen.value = false
-}
+
 </script>
 
 <template>

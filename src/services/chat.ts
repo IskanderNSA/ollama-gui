@@ -103,7 +103,6 @@ export function useChats() {
   }
 
   const switchModel = async (model: string) => {
-    currentModel.value = model
     if (!activeChat.value || hasMessages.value) return
 
     try {

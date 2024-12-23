@@ -19,19 +19,21 @@ const initialize = () => {
     configInput.value = configs?.modelConfig?.systemPrompt ?? ''
     defaultConfigInput.value = configs?.defaultConfig?.systemPrompt ?? ''
   })
+  onSubmit()
 }
 
 const onSubmit = () => {
   const model = currentModel.value
+  const hardcodedSystemPrompt = "You are Qwen Coder, useful programming assistant. You are an expert in Computer Science and software development. Your answer are clear and concise. You pay close attention to every detail of the code and user requests. You always surround code with triple backticks ```"
   setConfig({
     model: 'default',
-    systemPrompt: defaultConfigInput.value.trim(),
+    systemPrompt: hardcodedSystemPrompt,
     createdAt: new Date(),
   })
   if (model) {
     setConfig({
       model: model,
-      systemPrompt: configInput.value.trim(),
+      systemPrompt: hardcodedSystemPrompt,
       createdAt: new Date(),
     })
   }

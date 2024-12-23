@@ -3,20 +3,20 @@ import gravatarUrl from 'gravatar-url'
 import { computed } from 'vue'
 import { Config, db } from './database'
 
-export const currentModel = useLocalStorage('currentModel', 'none')
+export const baseUrl = computed(() => 'http://localhost:11434/api')
+export const currentModel = useLocalStorage('currentModel', 'qwen2.5-coder:latest')
+
 export const gravatarEmail = useLocalStorage('gravatarEmail', 'helge.sverre@gmail.com')
 export const historyMessageLength = useLocalStorage('historyMessageLength', 10)
 export const avatarUrl = computed(() =>
   gravatarUrl(gravatarEmail.value, { size: 200, default: '/avatar.png' }),
 )
 export const debugMode = useLocalStorage('debug', false)
-export const baseUrl = useLocalStorage('baseUrl', 'http://localhost:11434/api')
 export const isDarkMode = useLocalStorage('darkMode', true)
-export const isSettingsOpen = useLocalStorage('settingsPanelOpen', true)
-export const isSystemPromptOpen = useLocalStorage('systemPromptOpen', true)
-export const toggleSettingsPanel = () => (isSettingsOpen.value = !isSettingsOpen.value)
-export const toggleSystemPromptPanel = () =>
-  (isSystemPromptOpen.value = !isSystemPromptOpen.value)
+export const isSettingsOpen = computed(() => false)
+export const isSystemPromptOpen = computed(() => false)
+export const toggleSettingsPanel = () => false
+export const toggleSystemPromptPanel = () => false
 
 // Database Layer
 export const configDbLayer = {

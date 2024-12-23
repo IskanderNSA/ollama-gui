@@ -124,6 +124,7 @@ export const useApi = () => {
     request: ChatRequest,
     onDataReceived: (data: any) => void,
   ): Promise<any[]> => {
+    console.log(`API URL: ${getApiUrl('/chat')}`)
     const res = await fetch(getApiUrl('/chat'), {
       method: 'POST',
       headers: {

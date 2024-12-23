@@ -16,18 +16,6 @@ import {
     <div
       class="relative h-screen w-60 overflow-y-auto border-l border-gray-200 bg-white py-4 dark:border-gray-700 dark:bg-gray-900 sm:w-64"
     >
-      <div class="mb-4 flex items-center gap-x-2 px-2 text-gray-900 dark:text-gray-100">
-        <button
-          @click="toggleSettingsPanel()"
-          class="inline-flex rounded-lg p-1 hover:bg-gray-100 hover:dark:bg-gray-700"
-        >
-          <IconLayoutSidebarRightCollapse class="h-6 w-6" />
-
-          <span class="sr-only">Close settings sidebar</span>
-        </button>
-        <h2 class="text-lg font-medium">Settings</h2>
-      </div>
-
       <!-- More Settings -->
       <div
         class="my-4 border-t border-gray-200 px-2 py-4 text-gray-900 dark:border-gray-700 dark:text-gray-100"
